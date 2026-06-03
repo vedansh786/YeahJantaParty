@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yeah Janta Party — Manifesto</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --orange: #D85A30;
+    --orange-dark: #9E3D1A;
+    --orange-pale: #fdf0eb;
+    --muted: #7a6a55;
+    --rule: #c8bfad;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem 5rem;
+  }
+
+  /* Header */
+  .masthead {
+    border-top: 4px solid var(--orange);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.5rem 0 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .masthead-left { flex: 1; }
+
+  .issue-tag {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .party-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .party-name span { color: var(--orange); }
+
+  .masthead-right {
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .subheader {
+    border-bottom: 3px double var(--rule);
+    padding: 0.75rem 0;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  /* Origin section */
+  .origin {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .origin-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+
+  .origin-text p {
+    color: #3a2e20;
+    line-height: 1.8;
+    font-size: 13px;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-box {
+    background: var(--orange);
+    color: white;
+    padding: 1.25rem;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .sidebar-box .sb-head {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-box p { color: rgba(255,255,255,0.92); }
+
+  /* Quote */
+  .pullquote {
+    border-left: 5px solid var(--orange);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--orange-pale);
+  }
+
+  .pullquote blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 21px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .pullquote cite {
+    font-size: 11px;
+    color: var(--orange-dark);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* Section header */
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .section-rule h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    color: var(--ink);
+  }
+
+  .section-rule hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Demands */
+  .demand {
+    border: 1px solid var(--rule);
+    margin-bottom: 1px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+  }
+
+  .demand-number {
+    background: var(--ink);
+    color: var(--orange);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .demand-body {
+    padding: 1rem 1.25rem;
+  }
+
+  .demand-body h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .demand-body p {
+    font-size: 12px;
+    color: #3a2e20;
+    line-height: 1.7;
+  }
+
+  .demand-tag-inline {
+    display: inline-block;
+    background: var(--orange-pale);
+    color: var(--orange-dark);
+    font-size: 10px;
+    padding: 2px 8px;
+    border: 1px solid var(--orange);
+    margin-top: 0.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Principles */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+
+  .principle {
+    background: var(--paper);
+    padding: 1.25rem;
+  }
+
+  .principle-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--orange);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  .principle h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+  }
+
+  .principle p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* Who we are */
+  .membership {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .membership h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+
+  .membership-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .membership-list li {
+    font-size: 12px;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #d4c9bb;
+    line-height: 1.6;
+  }
+
+  .membership-list li::before {
+    content: "→";
+    color: var(--orange);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Footer */
+  .manifesto-footer {
+    border-top: 3px double var(--rule);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .footer-stamp {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--orange);
+    letter-spacing: 0.05em;
+  }
+
+  .ticker {
+    background: var(--orange);
+    color: white;
+    padding: 0.4rem 1rem;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  YEAH JANTA PARTY · SATIRE WITH PURPOSE · EST. 2026 · YEAH JANTA PARTY · SATIRE WITH PURPOSE · EST. 2026 · YEAH JANTA PARTY · SATIRE WITH PURPOSE
+</div>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="masthead-left">
+      <div class="issue-tag">Official Manifesto · Issue No. 1 · 2026</div>
+      <div class="party-name"><span>Yeah</span><br>Janta<br>Party</div>
+    </div>
+    <div class="masthead-right">
+      Founded in outrage<br>
+      Run on memes<br>
+      Powered by youth<br>
+      Zero corporate sponsors<br>
+      Infinite frustration<br>
+      <br>
+      <strong style="color:var(--orange)">yeahjantaparty.in</strong>
+    </div>
+  </div>
+
+  <div class="subheader">
+    "They policed our vocabulary. We policed their priorities."
+  </div>
+
+  <div class="origin">
+    <div class="origin-text">
+      <h2>How a single "yeah"<br>started a movement</h2>
+      <p>
+        In May 2026, a judge dressed in colonial black robes went viral — not for a landmark ruling on NEET exam fraud, not for holding the powerful accountable, but for scolding a young lawyer for saying <em>"yeah"</em> in court. Eight seconds. That was all it took.
+      </p>
+      <p>
+        While lakhs of students were robbed of their futures by an exam leak that reached the highest levels of the education establishment — while millions of young Indians couldn't find work — the country's institutions found time to debate informal vocabulary.
+      </p>
+      <p>
+        We took the word they weaponised against us. We said: <strong>yeah, enough.</strong>
+      </p>
+      <p>
+        The Yeah Janta Party is not a party. We will not contest elections. We have no office, no party fund, no high command. What we have is a swarm. And swarms are impossible to silence.
+      </p>
+    </div>
+    <div class="sidebar-box">
+      <div class="sb-head">By the numbers</div>
+      <p>
+        <strong>45%</strong> — youth unemployment rate in urban India (age 20–24)<br><br>
+        <strong>24 lakh+</strong> — students affected by NEET 2024 leak<br><br>
+        <strong>8 seconds</strong> — length of the viral "Yeah" video<br><br>
+        <strong>0</strong> — senior officials jailed for exam fraud<br><br>
+        <strong>∞</strong> — our patience for this
+      </p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <blockquote>
+      "If you say ya again, we will close your file and return it to you. You are not sitting in a cafe or on a coffee table here."
+    </blockquote>
+    <cite>— A judge, while NEET scam accused walked free</cite>
+  </div>
+
+  <!-- DEMANDS -->
+  <div class="section-rule">
+    <h2>Our Demands</h2>
+    <hr>
+  </div>
+
+  <div class="demand">
+    <div class="demand-number">01</div>
+    <div class="demand-body">
+      <h3>Full accountability for the NEET exam leak</h3>
+      <p>
+        No transfers. No settlements. No scapegoating of small fish. Criminal prosecution, starting from the top. Every student who lost a year of their life because question papers were sold like sabzi in the open market deserves justice — not a re-exam notice and a press conference.
+      </p>
+      <span class="demand-tag-inline">Education justice</span>
+    </div>
+  </div>
+
+  <div class="demand">
+    <div class="demand-number">02</div>
+    <div class="demand-body">
+      <h3>A real national jobs policy for youth</h3>
+      <p>
+        Not a scheme. Not a slogan. Not an internship portal that crashes on day one. A transparent, funded, time-bound policy that treats youth unemployment as the national emergency it is. If 45% of young urban Indians can't find work, that is not a "challenge" — it is a failure of governance.
+      </p>
+      <span class="demand-tag-inline">Youth employment</span>
+    </div>
+  </div>
+
+  <div class="demand">
+    <div class="demand-number">03</div>
+    <div class="demand-body">
+      <h3>Institutions must focus on real problems</h3>
+      <p>
+        Courts, media, and government must direct their energy toward issues that actually affect millions of lives — not the vocabulary of a generation raised on the internet. The judiciary's time is a national resource. Use it on exam fraud, labour rights, and press freedom. Not on "yeah".
+      </p>
+      <span class="demand-tag-inline">Real priorities</span>
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="section-rule">
+    <h2>What We Stand For</h2>
+    <hr>
+  </div>
+
+  <div class="principles-grid">
+    <div class="principle">
+      <div class="principle-num">Principle 01</div>
+      <h4>Satire is not silence</h4>
+      <p>Laughter has always been how the powerless speak to the powerful. A joke that makes you think is not a distraction — it is resistance in a language everyone understands.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">Principle 02</div>
+      <h4>Outrage must have a target</h4>
+      <p>We are not angry at everything. We are angry at specific, named failures: the NEET leak, the unemployment crisis, and institutions that protect their dignity more than citizens' futures.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">Principle 03</div>
+      <h4>Gen Z is not the problem</h4>
+      <p>We didn't leak the exam papers. We didn't create the jobs crisis. We inherited them. Blaming our language, our memes, our informality is a deflection. We refuse to accept it.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">Principle 04</div>
+      <h4>No high command, no surrender</h4>
+      <p>There is no leader to arrest, no office to raid, no party fund to freeze. The Yeah Janta Party is an idea. And ideas don't have files that can be closed and returned.</p>
+    </div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <div class="section-rule">
+    <h2>Who Can Join</h2>
+    <hr>
+  </div>
+
+  <div class="membership">
+    <h2>Membership is free. Lifelong. And open to anyone who is:</h2>
+    <ul class="membership-list">
+      <li>A student robbed of a fair shot at a future</li>
+      <li>Unemployed — by force, not by choice</li>
+      <li>Frustrated by exam leaks and zero accountability</li>
+      <li>Tired of being told your language is the problem</li>
+      <li>Someone who's ever said "yeah" in casual conversation</li>
+      <li>A parent who wants better for their children</li>
+      <li>A professional who remembers being dismissed as "too young"</li>
+      <li>Anyone who believes satire can carry real demands</li>
+    </ul>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="section-rule">
+    <h2>In Closing</h2>
+    <hr>
+  </div>
+
+  <p style="font-size:13px; color:#3a2e20; line-height:1.9; margin-bottom:1rem;">
+    India's institutions have long confused respect with silence. They mistake formality for legitimacy, and mistake informality for ignorance. A generation that says "yeah" and "gotcha, your honour" in the same breath is not a generation in decline — it is a generation that has learned to hold two registers at once, because it has had to survive in two worlds at once.
+  </p>
+
+  <p style="font-size:13px; color:#3a2e20; line-height:1.9; margin-bottom:1rem;">
+    We don't want to tear down the institutions. We want them to work. We want courts that spend their energy on justice. We want an education system where merit means something. We want a job market where a degree is a door, not a decoration.
+  </p>
+
+  <p style="font-size:13px; color:#3a2e20; line-height:1.9; margin-bottom:2rem;">
+    Until then — yeah, we'll be here. Loud, informal, persistent. Like cockroaches. Like the youth. Like the truth.
+  </p>
+
+  <div class="manifesto-footer">
+    <div>
+      <div class="footer-stamp">Yeah Janta Party · 2026</div>
+      <div style="margin-top:0.3rem;">Unofficial · Unregistered · Unstoppable</div>
+    </div>
+    <div style="text-align:right;">
+      No copyright. Share freely.<br>
+      Spread the yeah.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
